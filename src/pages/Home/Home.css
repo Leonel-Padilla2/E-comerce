@@ -1,3 +1,17 @@
 .home-container {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.products-container {
+  padding: 10px;
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.products-container > .product {
+  margin: 10px;
 }
