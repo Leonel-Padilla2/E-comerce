@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.product-details-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.details-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px #ccc;
+  width: 1200px;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.detail-image {
+  object-fit: contain;
+  width: 700px;
+  height: 900px;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 15px;
+}
+
+.detail-text > h2 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 30px;
+}
+
+.detail-text > h3 {
+  color: rgb(107, 107, 107);
+  background-color: whitesmoke;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.detail-text > p {
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.add-cart-button {
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-cart-button:hover {
+  transform: scale(1.1);
+}
+
+.add-cart-button:active {
+  transform: scale(0.9);
+}
