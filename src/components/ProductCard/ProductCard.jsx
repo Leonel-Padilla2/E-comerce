@@ -11,8 +11,7 @@ const ProductCard = ({productDetails = {}, className}) => {
 
   return (
     <div onClick={handleOnClick} className={`product-card-container ${className}`}>
-      <img className='product-image' src={image} alt="product">
-      </img>
+      <img className='product-image' src={image} alt="product"/>
       <h4 className='product-title'>{title}</h4>
       <span className='product-category'>{category}</span>
       <h2 className='product-price'>${price}</h2>
