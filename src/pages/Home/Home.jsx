@@ -18,7 +18,6 @@ const Home = () => {
       .then(response => {
         if(response.status !== 200) throw new Error(response.error)  
         dispatch(setProducts(response.data))
-        setError((current)=>({...current, showError: false}))
       })
       .catch(() => setError((current)=>({...current, showError: true})))
       .finally(()=> setIsLoading(false))
