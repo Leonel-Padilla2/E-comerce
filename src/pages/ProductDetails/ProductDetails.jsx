@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
@@ -6,11 +6,10 @@ import './ProductDetails.css'
 
 const ProductDetails = () => {
   const {id} = useParams()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState({showError: false, message: 'There was an error, please try again later!'})
   const dispatch = useDispatch()
-  const product = useSelector(state => state.allProducts.selectedProduct)
-  const {image, title, price, description, category} = product
+  const {status} = useSelector(state => state.allProducts)
+  const {selectedProduct} = useSelector(state => state.allProducts.allProducts)
+  const {image, title, price, description, category} = selectedProduct
 
   useEffect(()=> {
       dispatch(fetchSelectedProduct(id))
@@ -21,15 +20,12 @@ const ProductDetails = () => {
       
   }, [id, dispatch])
 
-  if(isLoading) {
-    return(
-      <h1>Loading Component</h1>
-    )
+  if(status.loading === 'pending') {
+    return <h1>Loading Component</h1>
+    
   }
-  if (error.showError){
-    return(
-      <h1>{error.message}</h1>
-    )
+  if (status.loading === 'rejected'){
+    return <h1>{status.error}</h1>
   }
   return (
     <div className='product-details-container'>
