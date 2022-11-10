@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getProductById } from '../../services/products'
-import { selectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
+import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
 import './ProductDetails.css'
 
 const ProductDetails = () => {
@@ -14,15 +13,7 @@ const ProductDetails = () => {
   const {image, title, price, description, category} = product
 
   useEffect(()=> {
-    /*Using feching service and dispatching selectedProduct action*/ 
-    setIsLoading(true)
-    getProductById(id)
-      .then(response => {
-        if (response.status !== 200) throw new Error(response.error)
-        dispatch(selectedProduct(response.data))
-      })
-      .catch(() => setError(current => ({...current, showError: true})))
-      .finally(() => setIsLoading(false))
+      dispatch(fetchSelectedProduct(id))
 
     return() => {
       dispatch(removeSelectedProduct())

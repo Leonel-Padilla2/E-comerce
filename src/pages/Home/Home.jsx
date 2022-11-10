@@ -1,7 +1,7 @@
+import React from 'react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setProducts } from '../../redux/actions/productActions'
-import { getAllProducts } from '../../services/products'
+import { fetchProducts } from '../../redux/actions/productActions'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import './Home.css'
 
@@ -12,16 +12,7 @@ const Home = () => {
   const [error, setError] = useState({showError: false, message: 'There was an error, please try again later!'})
   
   useEffect(()=> {
-    /*Using feching service and dispatching setProducts actions*/ 
-    setIsLoading(true)
-    getAllProducts()
-      .then(response => {
-        if(response.status !== 200) throw new Error(response.error)  
-        dispatch(setProducts(response.data))
-      })
-      .catch(() => setError((current)=>({...current, showError: true})))
-      .finally(()=> setIsLoading(false))
-    
+    dispatch(fetchProducts())
   }, [dispatch])
 
   if (isLoading){
