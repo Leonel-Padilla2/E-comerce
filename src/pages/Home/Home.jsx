@@ -1,10 +1,10 @@
-import React from 'react'
+import './Home.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/actions/productActions'
 import ProductCard from '../../components/ProductCard/ProductCard'
-import './Home.css'
 import Loading from '../../components/Loading/Loading'
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const Home = () => {
   const {status} = useSelector(state => state.allProducts)
@@ -19,7 +19,7 @@ const Home = () => {
     return <Loading/>
   }
   if (status.loading === 'rejected') {
-    return <h1>{status.error}</h1>
+    return <ErrorMessage message={status.error}/>
   }
   return (
     <div className='home-container'>

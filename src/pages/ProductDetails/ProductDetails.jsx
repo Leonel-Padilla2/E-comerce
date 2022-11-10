@@ -1,9 +1,10 @@
+import './ProductDetails.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
 import Loading from '../../components/Loading/Loading'
-import './ProductDetails.css'
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
 const ProductDetails = () => {
   const {id} = useParams()
@@ -26,7 +27,7 @@ const ProductDetails = () => {
     
   }
   if (status.loading === 'rejected'){
-    return <h1>{status.error}</h1>
+    return <ErrorMessage message={status.error}/>
   }
   return (
     <div className='product-details-container'>
