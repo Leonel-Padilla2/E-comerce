@@ -1,0 +1,40 @@
+.loading-component {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  animation: bounce .5s alternate infinite ease;
+  margin-top: 100px;
+}
+
+@keyframes bounce {
+  0% {
+    margin-top: 100px;
+    height: 15px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.4);
+  }
+
+  100% {
+    margin-top: 0px;
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+}
+
+.circle:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: .3s;
+}
