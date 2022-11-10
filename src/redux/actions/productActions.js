@@ -1,17 +1,20 @@
+import { getAllProducts, getProductById } from "../../services/products"
 import { actionTypes } from "../constants/actionTypes"
 
-export const setProducts = (products) => {
-  return {
-    type: actionTypes.SET_PRODUCTS,
-    payload: products
-  }
-}
+export const fetchProducts = () => (dispatch) => {
+  getAllProducts()
+    .then(response => {
+      if (response.status !== 200) throw new Error(response.error)
+      dispatch({type: actionTypes.FETCH_PRODUCTS, payload: response.data})
+    })
+} 
 
-export const selectedProduct = (product) => {
-  return {
-    type: actionTypes.SELECTED_PRODUCT,
-    payload: product
-  }
+export const fetchSelectedProduct = (id) => (dispatch) => {
+  getProductById(id)
+    .then(response => {
+      if (response.status !== 200) throw new Error(response.error)
+      dispatch({type: actionTypes.FETCH_SELECTED_PRODUCT, payload: response.data})
+    })
 }
 
 export const removeSelectedProduct = () => {
