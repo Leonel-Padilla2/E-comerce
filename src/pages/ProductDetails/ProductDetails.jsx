@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
+import Loading from '../../components/Loading/Loading'
 import './ProductDetails.css'
 
 const ProductDetails = () => {
@@ -21,7 +22,7 @@ const ProductDetails = () => {
   }, [id, dispatch])
 
   if(status.loading === 'pending') {
-    return <h1>Loading Component</h1>
+    return <Loading/>
     
   }
   if (status.loading === 'rejected'){

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/actions/productActions'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import './Home.css'
+import Loading from '../../components/Loading/Loading'
 
 const Home = () => {
   const {status} = useSelector(state => state.allProducts)
@@ -15,7 +16,7 @@ const Home = () => {
   }, [dispatch])
 
   if (status.loading === 'pending'){
-    return <h1>Loading component</h1>
+    return <Loading/>
   }
   if (status.loading === 'rejected') {
     return <h1>{status.error}</h1>
