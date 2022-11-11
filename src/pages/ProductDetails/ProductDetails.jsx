@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom'
 import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions/productActions'
 import Loading from '../../components/Loading/Loading'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
+import { addProductCart } from '../../redux/actions/cartActions'
+
 
 const ProductDetails = () => {
   const {id} = useParams()
@@ -22,6 +24,10 @@ const ProductDetails = () => {
       
   }, [id, dispatch])
 
+  const handleOnClick = () => {
+    dispatch(addProductCart())
+  }
+
   if(status.loading === 'pending') {
     return <Loading/>
     
@@ -38,7 +44,12 @@ const ProductDetails = () => {
           <h3>{category}</h3> 
           <p>{description}</p>
           <h2>$ {price}</h2>
-          <button className='add-cart-button'>Add to cart</button>
+          <button 
+            className='add-cart-button'
+            onClick={handleOnClick}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
