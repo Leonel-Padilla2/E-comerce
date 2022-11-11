@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="app-container">
-      <Header/>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route index element={<Home/>}/>
           <Route path='/product/:id' element={<ProductDetails/>}/>
