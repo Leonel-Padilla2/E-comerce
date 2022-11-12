@@ -14,3 +14,13 @@
   width: auto;
   border-radius: 5px;
 }
+
+@media screen and (max-width:300px) {
+  .header-logo {
+    height: 55px;
+  }
+
+  .header-container > h3 {
+    font-size: 20px;
+  }
+}
