@@ -1,0 +1,15 @@
+.product-option-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-option {
+  width: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.product-option:active {
+  transform: scale(0.9);
+}
