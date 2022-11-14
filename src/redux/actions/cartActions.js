@@ -14,7 +14,7 @@ export const addProductCart = () => (dispatch, getState) => {
 
 export const removeProductCart = (id) => {
   return{
-    type: actionTypes.ADD_PRODUCT_CART, 
+    type: actionTypes.REMOVE_PRODUCT_CART, 
     payload: id
   }
 }
