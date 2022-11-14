@@ -3,6 +3,16 @@
   padding: 0px;
 }
 
+*::-webkit-scrollbar {
+  width: 5px;
+} 
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: rgb(16, 16, 16);
+}
+
 .app-container {
   background-color: white;
 }
