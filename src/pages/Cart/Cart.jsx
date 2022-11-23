@@ -2,8 +2,16 @@ import './Cart.css'
 import { useSelector } from 'react-redux'
 import CartProductCard from '../../components/CartProductCard/CartProductCard'
 import emptyCartLogo from '../../img/empty-cart-logo.png'
+import Modal from '../../components/Modal/Modal'
+import { useModal } from '../../hooks/UseModal'
 
 const Cart = () => {
+  const {
+    visible,
+    handleOnClose,
+    showModal,
+    modalData
+  } = useModal()
   const {products} = useSelector(state => state.cart)
   let totalPrice = 0
   
@@ -11,9 +19,17 @@ const Cart = () => {
     totalPrice += (product.price * product.quantity)
   });
 
+  const handleOnClick = () => {
+    showModal('Error', 'This feature is not available tight now!')
+  }
 
   return (
     <div className='cart-container'>
+      <Modal
+        visible={visible} onClose={handleOnClose}
+        title={modalData.title} message={modalData.message}
+      />
+      
       <div className='cart-products-container'>
         <h1 className='cart-title'>Your Cart</h1>
         <div className='cart-products'>
@@ -45,7 +61,7 @@ const Cart = () => {
             <span className='price-number'>${totalPrice.toFixed(2)}</span>
           </div>
 
-          <button className='pay-button'>PAY</button>
+          <button onClick={handleOnClick} className='pay-button'>PAY</button>
         </div>
       </div>
     </div>
