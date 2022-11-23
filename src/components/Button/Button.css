@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
+}
