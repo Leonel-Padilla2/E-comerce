@@ -4,6 +4,7 @@ import CartProductCard from '../../components/CartProductCard/CartProductCard'
 import emptyCartLogo from '../../img/empty-cart-logo.png'
 import Modal from '../../components/Modal/Modal'
 import { useModal } from '../../hooks/UseModal'
+import Button from '../../components/Button/Button'
 
 const Cart = () => {
   const {
@@ -20,7 +21,7 @@ const Cart = () => {
   });
 
   const handleOnClick = () => {
-    showModal('Error', 'This feature is not available tight now!')
+    showModal('Error', 'This feature is not available right now!')
   }
 
   return (
@@ -61,7 +62,7 @@ const Cart = () => {
             <span className='price-number'>${totalPrice.toFixed(2)}</span>
           </div>
 
-          <button onClick={handleOnClick} className='pay-button'>PAY</button>
+          <Button onClick={handleOnClick} className='pay-button'>PAY</Button>
         </div>
       </div>
     </div>

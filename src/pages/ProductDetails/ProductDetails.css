@@ -70,18 +70,5 @@
   width: 200px;
   font-size: 20px;
   border-radius: 5px;
-  border: none;
-  color: white;
-  background-color: black;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.add-cart-button:hover {
-  transform: scale(1.1);
-}
-
-.add-cart-button:active {
-  transform: scale(0.9);
 }

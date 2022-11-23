@@ -14,25 +14,11 @@
 }
 
 .button-404 {
-  border: none;
-  background-color: black;
-  color: white;
   height: 70px;
   width: 210px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 20px;
-  transition: 0.3s;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.button-404:hover {
-  transform: scale(1.1);
-}
-
-.button-404:active {
-  transform: scale(0.9);
 }
 
 @media screen and (max-width: 600px){

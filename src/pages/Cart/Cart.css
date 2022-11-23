@@ -91,24 +91,11 @@
 }
 
 .pay-button {
-  border: none;
-  background-color: black;
-  color: white;
   font-size: 20px;
   font-weight: bold;
   border-radius: 50px;
   height: 65px;
   width: 60%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.pay-button:hover {
-  transform: scale(1.1);
-}
-
-.pay-button:active {
-  transform: scale(0.9);
 }
 
 @media screen and (max-width: 950px) {  

@@ -1,6 +1,7 @@
 import './NotFound.css'
 import error404Logo from '../../img/error-404-logo.png'
 import { Link } from 'react-router-dom'
+import Button from '../../components/Button/Button'
 
 const NotFound = () => {
   return (
@@ -8,7 +9,7 @@ const NotFound = () => {
       <img className='not-found-logo' src={error404Logo} alt='404-logo'/>
       <h1 className='not-found-title'>Not Found</h1>
       <Link to='/'>
-        <button className='button-404'>Go To Homepage</button>
+        <Button className='button-404'>GO TO HOMEPAGE</Button>
       </Link>
     </div>
   )

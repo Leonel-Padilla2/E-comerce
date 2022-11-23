@@ -6,6 +6,7 @@ import { fetchSelectedProduct, removeSelectedProduct } from '../../redux/actions
 import Loading from '../../components/Loading/Loading'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import { addProductCart } from '../../redux/actions/cartActions'
+import Button from '../../components/Button/Button'
 
 
 const ProductDetails = () => {
@@ -44,12 +45,12 @@ const ProductDetails = () => {
           <h3>{category}</h3> 
           <p>{description}</p>
           <h2>$ {price}</h2>
-          <button 
+          <Button
             className='add-cart-button'
             onClick={handleOnClick}
           >
             Add to cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>
