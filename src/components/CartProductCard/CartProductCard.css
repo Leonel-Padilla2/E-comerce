@@ -1,0 +1,31 @@
+.cart-product-card-container {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.cart-product-image {
+  min-width: 100px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.cart-product-title {
+  min-width: 100px;
+  max-width: 200px;  
+}
+
+.cart-product-price, .cart-product-title {
+  font-family: system-ui;
+}
+
+@media screen and (max-width: 750px) {
+  .cart-product-card-container {
+    flex-direction: column;
+  }
+  .cart-product-image {
+    max-height: 145px;
+  }
+}

@@ -1,0 +1,28 @@
+.not-found-page-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.not-found-title {
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+  font-size: 80px;
+}
+
+.button-404 {
+  height: 70px;
+  width: 210px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 600px){
+  .not-found-logo {
+    width: 90%;
+  }
+}
