@@ -1,4 +1,6 @@
 import './ProductDetails.css'
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -22,7 +24,6 @@ const ProductDetails = () => {
     return() => {
       dispatch(removeSelectedProduct())
     }
-      
   }, [id, dispatch])
 
   const handleOnClick = () => {
@@ -39,7 +40,7 @@ const ProductDetails = () => {
   return (
     <div className='product-details-container'>
       <div className='details-container'>
-        <img className='detail-image' src={image} alt="product" />
+        <LazyLoadImage className='detail-image' src={image} alt="product" effect='blur'/>
         <div className='detail-text'>
           <h2>{title}</h2>
           <h3>{category}</h3> 
