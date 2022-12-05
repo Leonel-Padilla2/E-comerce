@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Cart from '../pages/Cart/Cart';
 import Home from '../pages/Home/Home';
@@ -6,10 +6,10 @@ import NotFound from '../pages/NotFound/NotFound';
 import ProductDetails from '../pages/ProductDetails/ProductDetails';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="app-container">
-      <BrowserRouter>
+      <HashRouter>
         <Header/>
         <Routes>
           <Route index element={<Home/>}/>
@@ -17,8 +17,7 @@ function App() {
           <Route path='/product/:id' element={<ProductDetails/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
-      </BrowserRouter>
-      
+      </HashRouter>
     </div>
   );
 }
