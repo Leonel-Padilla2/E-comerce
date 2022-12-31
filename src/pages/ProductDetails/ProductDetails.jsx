@@ -49,6 +49,7 @@ const ProductDetails = () => {
           <Button
             className='add-cart-button'
             onClick={handleOnClick}
+            disabled={!price && true}
           >
             Add to cart
           </Button>
