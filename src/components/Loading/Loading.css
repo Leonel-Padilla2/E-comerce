@@ -1,9 +1,23 @@
 .loading-component {
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 25px;
+}
+
+.loading-title {
+  font-family: 'Cabin', sans-serif;
+  font-size: 35px;
+}
+
+.circles-comtainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  min-height: 100px;
+  gap: 15px;
 }
 
 .circle {
