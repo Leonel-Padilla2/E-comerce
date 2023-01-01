@@ -9,9 +9,9 @@ export const fetchProducts = () => async (dispatch) => {
     .then(response => {
       if (response.status !== 200) throw new Error(response.error)
       dispatch({type: actionTypes.FETCH_PRODUCTS, payload: response.data})
+      dispatch(fetchFulfilled())
     })
-    .catch(error => dispatch(fetchError(error.message)))
-    .finally(() => dispatch(fetchFulfilled()))
+    .catch(error => dispatch(fetchError(error.message)))  
 } 
 
 export const fetchSelectedProduct = (id) => (dispatch) => {
@@ -21,9 +21,9 @@ export const fetchSelectedProduct = (id) => (dispatch) => {
     .then(response => {
       if (response.status !== 200) throw new Error(response.error)
       dispatch({type: actionTypes.FETCH_SELECTED_PRODUCT, payload: response.data})
+      dispatch(fetchFulfilled())
     })
     .catch(error => dispatch(fetchError(error.message)))
-    .finally(() => dispatch(fetchFulfilled()))
 }
 
 export const removeSelectedProduct = () => {
