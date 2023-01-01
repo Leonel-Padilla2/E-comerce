@@ -3,9 +3,12 @@ import './Loading.css'
 const Loading = () => {
   return (
     <div className='loading-component'>
-      <div className='circle'/>
-      <div className='circle'/>
-      <div className='circle'/>
+      <h1 className='loading-title'>Loading</h1>
+      <div className='circles-comtainer'>
+        <div className='circle'/>
+        <div className='circle'/>
+        <div className='circle'/>
+      </div>
     </div>
   )
 }
